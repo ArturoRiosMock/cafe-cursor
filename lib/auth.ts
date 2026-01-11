@@ -19,15 +19,6 @@ function getAdminCredentials() {
  */
 export function verifyCredentials(username: string, password: string): boolean {
   const credentials = getAdminCredentials();
-  
-  // Log para depuración (remover en producción)
-  console.log(`🔑 [AUTH] Verificando credenciales...`);
-  console.log(`🔑 [AUTH] ENV ADMIN_USERNAME existe: ${!!process.env.ADMIN_USERNAME}`);
-  console.log(`🔑 [AUTH] ENV ADMIN_PASSWORD existe: ${!!process.env.ADMIN_PASSWORD}`);
-  console.log(`🔑 [AUTH] Username esperado: ${credentials.username}`);
-  console.log(`🔑 [AUTH] Username recibido: ${username}`);
-  console.log(`🔑 [AUTH] Password coincide: ${password === credentials.password}`);
-  
   return username === credentials.username && password === credentials.password;
 }
 
